@@ -1,0 +1,1 @@
+0 2 * * * /bin/bash /path/to/eduonix-devops/projects/devops-foundation/backup.sh /path/to/source /path/to/backups >> /path/to/backup.log 2>&1

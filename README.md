@@ -23,6 +23,28 @@ The goal of this repo is to keep all module work in one place, including:
 
 A simple Bootstrap-based project board for the six main course modules.
 
+### Module 1: DevOps Foundation
+
+- [projects/devops-foundation/README.md](projects/devops-foundation/README.md)
+
+Current foundation project:
+
+- local backup scheme using `rsync`, compression, and cron scheduling
+
+Included deliverables:
+
+- a backup script built with `rsync`
+- a restore helper script
+- a sample cron entry for scheduling
+- an exclude file for common backup omissions
+
+Run it with:
+
+```bash
+cd projects/devops-foundation
+./backup.sh /path/to/source /path/to/backups
+```
+
 ### Module 2: Scripting Basics
 
 - [projects/scripting-basics/password_generator.rb](projects/scripting-basics/password_generator.rb)
@@ -106,6 +128,8 @@ http://localhost:4567
 Depending on which project you want to run locally, you may need:
 
 - Ruby
+- Bash
+- rsync
 - Vagrant
 - VirtualBox
 - Node.js
