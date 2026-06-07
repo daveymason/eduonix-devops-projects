@@ -1,6 +1,6 @@
 # Ruby and PHP Web Forms on Docker and Kubernetes
 
-This project is a simple web-form submission project for the Eduonix DevOps coursework. It includes a Ruby version built with Sinatra and a minimal PHP version to satisfy the traditional LAMP-style requirement. Both variants use MySQL for storage, Docker for containerization, and Kubernetes YAML files for deployment.
+This project is a simple web-form submission project for the Eduonix DevOps coursework. It includes a Ruby version built with Sinatra and a minimal PHP version to satisfy the LAMP-style requirement. Both variants use MySQL for storage, Docker for containerization, and Kubernetes YAML files for deployment.
 
 ## Project Contents
 
