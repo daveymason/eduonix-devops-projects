@@ -55,7 +55,3 @@ Then access the services through your cluster's NodePorts:
 
 - Ruby app: `30080`
 - PHP app: `30081`
-
-## Note
-
-This project now includes both a Ruby implementation and a minimal PHP implementation so you can show Docker and Kubernetes delivery while still covering the more traditional PHP/MySQL requirement.
