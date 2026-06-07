@@ -72,6 +72,35 @@ Then open:
 http://localhost:8080
 ```
 
+### Module 4: Tools of the Trade - Part 2
+
+- [projects/docker-k8/README.md](projects/docker-k8/README.md)
+
+Current Docker and Kubernetes project:
+
+- Ruby web form with MySQL, Docker, and Kubernetes manifests
+
+Included deliverables:
+
+- a simple Sinatra-based Ruby form app
+- a Dockerfile for the web application
+- a Docker Compose file for local testing
+- a MySQL initialization script
+- Kubernetes YAML for namespace, secret, storage, MySQL, app deployment, and service
+
+Run locally with Docker:
+
+```bash
+cd projects/docker-k8
+docker compose up --build
+```
+
+Then open:
+
+```text
+http://localhost:4567
+```
+
 ## Suggested Requirements
 
 Depending on which project you want to run locally, you may need:
@@ -80,6 +109,8 @@ Depending on which project you want to run locally, you may need:
 - Vagrant
 - VirtualBox
 - Node.js
+- Docker
+- Kubernetes
 
 ## Course Modules
 

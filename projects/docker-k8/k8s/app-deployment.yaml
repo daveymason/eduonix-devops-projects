@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ruby-form-app
+  namespace: ruby-form
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ruby-form-app
+  template:
+    metadata:
+      labels:
+        app: ruby-form-app
+    spec:
+      containers:
+        - name: ruby-form-app
+          image: your-dockerhub-username/ruby-form-app:latest
+          ports:
+            - containerPort: 4567
+          env:
+            - name: DB_HOST
+              value: mysql
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_DATABASE
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_USER
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_PASSWORD
+            - name: PORT
+              value: "4567"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi

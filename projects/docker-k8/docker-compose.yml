@@ -1,0 +1,44 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: ruby-form-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: contact_app
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  web:
+    build: .
+    container_name: ruby-form-web
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_NAME: contact_app
+      DB_USER: appuser
+      DB_PASSWORD: apppassword
+      PORT: 4567
+    ports:
+      - "4567:4567"
+
+  php-web:
+    build: ./php
+    container_name: php-form-web
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_NAME: contact_app
+      DB_USER: appuser
+      DB_PASSWORD: apppassword
+    ports:
+      - "8081:80"
+
+volumes:
+  mysql_data:
